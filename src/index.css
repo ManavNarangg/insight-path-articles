@@ -38,6 +38,26 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
+    /* Blog-specific design tokens */
+    --blog-accent: 160 84% 39%;
+    --blog-accent-foreground: 0 0% 100%;
+    --blog-accent-light: 160 40% 96%;
+    --blog-accent-dark: 160 100% 25%;
+    
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-card-hover: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -83,6 +103,15 @@ All colors MUST be HSL.
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
+    /* Blog-specific dark mode tokens */
+    --blog-accent: 160 84% 45%;
+    --blog-accent-foreground: 222.2 84% 4.9%;
+    --blog-accent-light: 160 20% 20%;
+    --blog-accent-dark: 160 100% 35%;
+    
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 1px 2px -1px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -2px hsl(0 0% 0% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +130,39 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.25;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .blog-accent {
+    @apply text-blog-accent;
+    color: hsl(var(--blog-accent));
+  }
+  
+  .bg-blog-accent {
+    background-color: hsl(var(--blog-accent));
+  }
+  
+  .hover\:bg-blog-accent:hover {
+    background-color: hsl(var(--blog-accent));
+  }
+  
+  .border-blog-accent {
+    border-color: hsl(var(--blog-accent));
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-shadow-hover {
+    box-shadow: var(--shadow-card-hover);
   }
 }

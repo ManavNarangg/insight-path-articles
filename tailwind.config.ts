@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'blog-accent': {
+					DEFAULT: 'hsl(var(--blog-accent))',
+					foreground: 'hsl(var(--blog-accent-foreground))',
+					light: 'hsl(var(--blog-accent-light))',
+					dark: 'hsl(var(--blog-accent-dark))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
