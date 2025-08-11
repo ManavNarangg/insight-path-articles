@@ -28,29 +28,35 @@ const BlogCard = ({ post, variant = "small", className }: BlogCardProps) => {
 
   if (variant === "insights") {
     return (
-      <Card className={cn("card-shadow hover:card-shadow-hover transition-all duration-200 cursor-pointer", className)}>
-        <CardContent className="p-6">
-          <div className="flex gap-4">
-            <div className="w-20 h-20 flex-shrink-0">
-              <img 
-                src={post.image} 
-                alt={post.title}
-                className="w-full h-full object-cover rounded-md"
-              />
-            </div>
-            <div className="flex-1">
-              <div className="mb-2">
-                <h3 className="text-lg font-semibold line-clamp-2 mb-2">{post.title}</h3>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <span>{post.author}</span>
-                  <span>•</span>
-                  <span>{new Date(post.date).toLocaleDateString("en-US", { 
-                    month: "short", 
-                    day: "numeric" 
-                  })}</span>
-                </div>
+      <Card className={cn("card-shadow hover:card-shadow-hover transition-all duration-200 cursor-pointer mb-8", className)}>
+        <CardContent className="p-8">
+          <div className="flex flex-col gap-6">
+            <div>
+              <h2 className="text-2xl font-bold line-clamp-2 mb-4">{post.title}</h2>
+              <div className="flex items-center gap-3 text-base text-muted-foreground mb-6">
+                <span className="font-medium">{post.author}</span>
+                <span>•</span>
+                <span>{new Date(post.date).toLocaleDateString("en-US", { 
+                  month: "long", 
+                  day: "numeric" 
+                })}</span>
               </div>
-              <p className="text-muted-foreground text-sm line-clamp-2">{post.excerpt}</p>
+            </div>
+            
+            <div className="flex gap-6">
+              <div className="w-24 h-20 flex-shrink-0">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover rounded-md"
+                />
+              </div>
+              <div className="flex-1">
+                <p className="text-muted-foreground text-base leading-relaxed">{post.excerpt}</p>
+                <button className="text-blog-accent hover:underline mt-4 font-medium">
+                  Read full story →
+                </button>
+              </div>
             </div>
           </div>
         </CardContent>
