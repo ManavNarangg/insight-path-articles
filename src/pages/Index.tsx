@@ -13,21 +13,21 @@ const Index = () => {
       <Navigation />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section with Featured Article Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 lg:h-[600px]">
           {/* Left Section - Two Recent Posts */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-3 space-y-6 h-full">
             {recentPosts.map((post) => (
               <BlogCard key={post.id} post={post} variant="small" />
             ))}
           </div>
 
           {/* Center Section - Featured Post */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 h-full">
             <BlogCard post={featuredPost} variant="featured" />
           </div>
 
           {/* Right Section - Trending List */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 h-full">
             <h3 className="text-lg font-semibold mb-4">Trending</h3>
             <div className="space-y-3">
               {trendingPosts.map((post) => (
