@@ -46,6 +46,15 @@ const Navigation = () => {
               >
                 Insights
               </Link>
+              <Link
+                to="/contact"
+                className={cn(
+                  "px-3 py-2 text-sm font-medium transition-colors hover:text-blog-accent",
+                  isActive("/contact") ? "blog-accent" : "text-muted-foreground"
+                )}
+              >
+                Contact
+              </Link>
             </div>
           </div>
 
@@ -78,6 +87,15 @@ const Navigation = () => {
                 )}
               >
                 Insights
+              </Link>
+              <Link
+                to="/contact"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-blog-accent",
+                  isActive("/contact") ? "blog-accent" : "text-muted-foreground"
+                )}
+              >
+                Contact
               </Link>
             </div>
           </div>

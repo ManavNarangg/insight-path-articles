@@ -44,6 +44,17 @@ All colors MUST be HSL.
     --blog-accent-light: 160 40% 96%;
     --blog-accent-dark: 160 100% 25%;
     
+    /* Contact page color scheme */
+    --coral-400: 16 84% 65%;
+    --coral-500: 16 84% 60%;
+    --coral-600: 16 84% 55%;
+    --teal-400: 178 84% 65%;
+    --teal-500: 178 84% 60%;
+    --teal-600: 178 84% 55%;
+    --purple-400: 262 84% 65%;
+    --purple-500: 262 84% 60%;
+    --purple-600: 262 84% 55%;
+    
     /* Typography scale */
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
